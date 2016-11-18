@@ -1,0 +1,91 @@
+<div id="NeosliveHybridSearch" data-ng-app="NeosliveHybridSearch" data-ng-controller="searchCtrl"
+     data-ng-init="init('{firebaseEndpoint}','{site.context.currentSite.nodeName}','{site.workspace.name}','{site.nodeData.dimensionsHash}')">
+    <input type="text" data-ng-model="query">
+
+    <div class="results" data-ng-if="query">
+
+        <h3>Results ({{result.count()}})</h3>
+
+        <ul class="nav nav-pills nav-justified" role="tablist">
+            <li class="nav-item">
+                <a data-toggle="tab" href="#all" role="tab">All</a>
+            </li>
+            <li class="nav-item" ng-repeat="group in result.getGrouped().getItems()">
+                <a
+                        data-ng-class="{active: lastActiveTabName == group.getLabel()}"
+                        data-toggle="tab" href="#{{group.getLabel()}}"
+                        role="tab">{{group.getLabel()}}
+                    <span>({{group.count()}})</span></a>
+            </li>
+        </ul>
+
+
+        <div class="row results-table" data-ng-if="result.getGrouped().count() > 1">
+            <div class="col-xs-12 tab-content">
+
+
+                <div class="result-panel tab-pane nofilter fade"
+                     data-ng-class="{active: lastActiveTabName == 'all', in: lastActiveTabName == 'all'}"
+                     id="all" role="tabpanel">
+                    <ul>
+                        <li ng-repeat="node in result.getNodes() | orderBy:'-score'"
+                            data-ng-if="!node.isTurboNode()">
+                            <h3>
+                                <a href="{{node.getUrl()}}">{{node.getProperty('title')}}<span data-ng-hide="{{node.getProperty('title')}}">{{node.getDocumentNode().getProperty('title')}}</span></a>
+                            </h3>
+                            <div class="body">
+                                {{node.getPreview()}}
+                            </div>
+                            <div class="breadcrumb" ng-bind-html="node.getBreadcrumb()"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="result-panel tab-pane fade "
+                     data-ng-class="{active: lastActiveTabName == group.getLabel(), in: lastActiveTabName == group.getLabel()}"
+                     id="{{group.getLabel()}}" role="tabpanel" ng-repeat="group in result.getGrouped().getItems()">
+
+                    <ul>
+                        <li ng-repeat="node in group.getNodes() | orderBy:'-score'"
+                            data-ng-if="!node.isTurboNode()">
+                            <h3>
+                                <a href="{{node.getUrl()}}">{{node.getProperty('title')}}<span data-ng-hide="{{node.getProperty('title')}}">{{node.getDocumentNode().getProperty('title')}}</span></a>
+                            </h3>
+                            <div class="body">
+                                {{node.getPreview()}}
+                            </div>
+                            <div class="breadcrumb" ng-bind-html="node.getBreadcrumb()"></div>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="row results-table" data-ng-if="result.getGrouped().count() == 1">
+            <div class="col-xs-12 tab-content">
+
+                <div class="result-panel tab-pane nofilter fade active in" id="{{group.getLabel()}}" role="tabpanel"
+                     ng-repeat="group in result.getGrouped().getItems()">
+                    <ul>
+                        <li ng-repeat="node in group.getNodes() | orderBy:'-score'"
+                            data-ng-if="!node.isTurboNode()">
+                            <h3>
+                                <a href="{{node.getUrl()}}">{{node.getProperty('title')}}<span data-ng-hide="{{node.getProperty('title')}}">{{node.getDocumentNode().getProperty('title')}}</span></a>
+                            </h3>
+                            <div class="body">
+                                {{node.getPreview()}}
+                            </div>
+                            <div class="breadcrumb" ng-bind-html="node.getBreadcrumb()"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

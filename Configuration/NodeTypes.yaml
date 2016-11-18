@@ -1,0 +1,95 @@
+
+##
+# Make node searchable
+#
+'TYPO3.Neos.NodeTypes:Page':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+
+##
+# Make node searchable
+#
+'Neos.Demo:Homepage':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+
+##
+# Make node searchable
+#
+'TYPO3.Neos.NodeTypes:Headline':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+##
+# Make node searchable
+#
+'TYPO3.Neos.NodeTypes:TwoColumn':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+##
+# Make node searchable
+#
+'TYPO3.Neos.NodeTypes:ThreeColumn':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+##
+# Make node searchable
+#
+'TYPO3.Neos.NodeTypes:FourColumn':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+##
+# Adjust the "Form" node type:
+# Remove the empty select option and register the "contact-form"-Form
+#
+'TYPO3.Neos.NodeTypes:Form':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+
+##
+# Make node searchable
+#
+'Neos.Demo:Chapter':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+##
+# A custom "Menu" NodeType for chapters
+#
+'Neos.Demo:ChapterMenu':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+##
+# Make node searchable
+#
+'Neos.Demo:Registration':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+##
+# Make node searchable
+#
+'Neos.Demo:Flickr':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+##
+# Make node searchable
+#
+'Neos.Demo:YouTube':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+##
+# Make node searchable
+#
+'Neos.Demo:Carousel':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE

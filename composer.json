@@ -1,0 +1,18 @@
+{
+    "description": "Add description here",
+    "type": "neos-package",
+    "require": {
+        "typo3/flow": "*"
+    },
+    "name": "neoslive/hybridsearch-neos-demo",
+    "autoload": {
+        "psr-0": {
+            "Neoslive\\Hybridsearch\\Neos\\Demo": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Neoslive.Hybridsearch.Neos.Demo"
+        }
+    }
+}

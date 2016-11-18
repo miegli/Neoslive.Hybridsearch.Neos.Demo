@@ -1,0 +1,92 @@
+
+
+page.body {
+
+    javascripts.hybridsearchApp = TYPO3.TypoScript:Template {
+        templatePath = 'resource://Neoslive.Hybridsearch.Neos.Demo/Private/Templates/Search/App.html'
+        site = ${q(site).get(0)}
+        firebaseEndpoint = ${Configuration.setting('Neoslive.Hybridsearch.Firebase.endpoint')}
+    }
+
+}
+
+
+page.head {
+
+    javascripts.angularjs = TYPO3.TypoScript:Tag {
+        tagName = 'script'
+        attributes {
+            src = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://Neoslive.Hybridsearch/Public/Vendor/angular/angular.min.js'
+            }
+        }
+    }
+
+    javascripts.firebase = TYPO3.TypoScript:Tag {
+        tagName = 'script'
+        attributes {
+            src = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://Neoslive.Hybridsearch/Public/Vendor/firebase/firebase.js'
+            }
+        }
+    }
+
+    javascripts.angularfire = TYPO3.TypoScript:Tag {
+        tagName = 'script'
+        attributes {
+            src = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://Neoslive.Hybridsearch/Public/Vendor/angularfire/dist/angularfire.min.js'
+            }
+        }
+    }
+
+    javascripts.angularsanitize = TYPO3.TypoScript:Tag {
+        tagName = 'script'
+        attributes {
+            src = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://Neoslive.Hybridsearch/Public/Vendor/angular-sanitize/angular-sanitize.min.js'
+            }
+        }
+    }
+
+    javascripts.elasticlunr = TYPO3.TypoScript:Tag {
+        tagName = 'script'
+        attributes {
+            src = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://Neoslive.Hybridsearch/Public/Vendor/elasticlunr.js/elasticlunr.min.js'
+            }
+        }
+    }
+
+
+
+    javascripts.hybridsearch = TYPO3.TypoScript:Tag {
+        tagName = 'script'
+        attributes {
+            src = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://Neoslive.Hybridsearch/Public/hybridsearch.js'
+            }
+        }
+    }
+
+    javascripts.hybridsearchApp = TYPO3.TypoScript:Tag {
+        tagName = 'script'
+        attributes {
+            src = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://Neoslive.Hybridsearch.Neos.Demo/Public/App.js'
+            }
+        }
+    }
+
+
+    stylesheets.hybridsearchApp = TYPO3.TypoScript:Tag {
+        tagName = 'link'
+        attributes {
+            href = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://Neoslive.Hybridsearch.Neos.Demo/Public/app.css'
+            }
+            rel = 'stylesheet'
+        }
+    }
+
+}
