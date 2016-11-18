@@ -1,0 +1,7 @@
+<h3>
+    <a href="{{node.getUrl()}}">{{node.getProperty('title')}}<span data-ng-hide="node.getProperty('title')">{{node.getDocumentNode().getProperty('title')}}</span></a>
+</h3>
+<div class="body">
+    {{node.getPreview()}}
+</div>
+<div class="breadcrumb" ng-bind-html="node.getBreadcrumb()"></div>

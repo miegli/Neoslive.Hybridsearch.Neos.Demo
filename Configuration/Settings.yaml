@@ -12,7 +12,7 @@ Neoslive:
       token: 'NthH1iEjKKQpInFPl2KBSNvlW9Es6wy9U2PNDexw'
     Filter:
       GrantParentNodeTypeFilter: '[instanceof TYPO3.Neos:Document]'
-      ParentNodeTypeFilter: '[instanceof TYPO3.Neos:Content]'
+      ParentNodeTypeFilter: '[instanceof TYPO3.Neos.NodeTypes:Headline]'
       NodeTypeFilter: '[instanceof Neoslive.Hybridsearch:Content]'
 
 

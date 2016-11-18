@@ -93,3 +93,22 @@
 'Neos.Demo:Carousel':
   superTypes:
     'Neoslive.Hybridsearch:Content': TRUE
+
+##
+# Make node searchable
+#
+'TYPO3.Neos.NodeTypes:Image':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+##
+# Make node searchable
+#
+'TYPO3.Neos.NodeTypes:TextWithImage':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+##
+# Make node searchable
+#
+'TYPO3.Neos.NodeTypes:Text':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
