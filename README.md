@@ -20,3 +20,5 @@ Then you need a database token. Open your firebase project settings and create n
 
 `php ./flow hybridsearch:createfullindex`
 
+See also 
+https://github.com/miegli/Neoslive.Hybridsearch

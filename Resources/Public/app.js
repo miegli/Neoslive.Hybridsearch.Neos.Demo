@@ -26,6 +26,7 @@ angular.module('NeosliveHybridSearch', ['hybridsearch', 'ngSanitize']).controlle
 
             'neos-demo-chapter': 'Chapter',
             'typo3-neos-nodetypes-headline': 'Pages',
+            'neos-demo-carousel': 'Pages',
             'neos-demo-homepage': 'Pages',
             'typo3-neos-nodetypes-page': 'Pages',
             'typo3-neos-nodetypes-text': 'Pages',
