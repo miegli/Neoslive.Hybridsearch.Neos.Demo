@@ -13,6 +13,8 @@
             </div><!-- /input-group -->
 
 
+
+
             <div class="results" data-ng-if="query">
 
 
@@ -28,6 +30,13 @@
                             <span>({{group.count()}})</span></a>
                     </li>
                 </ul>
+
+
+                <div class="result turbonode" data-ng-show="result.countTurboNodes()" ng-repeat="(index,node) in result.getTurboNodes() | orderBy:'-score'"
+                     ng-if="index === 0">
+                    <item data="node" view="turbonode"></item>
+                </div>
+
 
 
                 <div class="row results-table" data-ng-if="result.getGrouped().count() > 1">
@@ -53,7 +62,7 @@
                             <ul>
                                 <li ng-repeat="node in group.getNodes() | orderBy:'-score'"
                                     data-ng-if="!node.isTurboNode()">
-                                    <item data="node" view="all"></item>
+                                    <item data="node" view="group"></item>
                                 </li>
                             </ul>
 
@@ -73,7 +82,7 @@
                             <ul>
                                 <li ng-repeat="node in group.getNodes() | orderBy:'-score'"
                                     data-ng-if="!node.isTurboNode()">
-                                    <item data="node" view="all"></item>
+                                    <item data="node" view="group"></item>
                                 </li>
                             </ul>
                         </div>

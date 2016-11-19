@@ -2,7 +2,9 @@
     "description": "Add description here",
     "type": "neos-package",
     "require": {
-        "typo3/flow": "*"
+        "typo3/flow": "*",
+        "neos/demo": "*",
+        "neoslive/hybridsearch": "dev-master"
     },
     "name": "neoslive/hybridsearch-neos-demo",
     "autoload": {

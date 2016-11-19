@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="hidden-xs col-sm-1">
+  <img src="{{node.getProperty('neos-demo-chapter-chapterimage').thumbnailUri}}"/>
+</div>
+<div class="col-xs-12 col-sm-11">
+    <h3>
+        <a href="{{node.getUrl()}}">{{node.getProperty('title')}}<span data-ng-hide="node.getProperty('title')">{{node.getDocumentNode().getProperty('title')}}</span></a>
+    </h3>
+    <div class="body">
+        {{node.getPreview()}}
+    </div>
+</div>
+</div>

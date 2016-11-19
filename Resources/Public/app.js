@@ -6,11 +6,12 @@ angular.module('NeosliveHybridSearch', ['hybridsearch', 'ngSanitize']).controlle
     $scope.result = new $hybridsearchResultsObject();
     $scope.lastActiveTabName = 'all';
 
-    $scope.close = function() {
+
+    $scope.close = function () {
         $scope.query = '';
     };
 
-    $scope.init = function (firebaseEndpoint,siteNodeName, workspaceName, dimensionHash) {
+    $scope.init = function (firebaseEndpoint, siteNodeName, workspaceName, dimensionHash) {
 
         var hybridSearch = new $hybridsearch(
             firebaseEndpoint,
@@ -21,14 +22,24 @@ angular.module('NeosliveHybridSearch', ['hybridsearch', 'ngSanitize']).controlle
 
         var mySearch = new $hybridsearchObject(hybridSearch);
 
-        mySearch.setQuery('query', $scope).$bind('result',$scope).$watch(function(data) {
-            console.log(data.count());
+        var labels = {
+
+            'neos-demo-chapter': 'Chapter',
+            'typo3-neos-nodetypes-headline': 'Pages',
+            'typo3-neos-nodetypes-text': 'Pages',
+            'typo3-neos-nodetypes-image': 'Images'
+
+        };
+
+        mySearch.setNodeTypeLabels(labels).setQuery('query', $scope).$bind('result', $scope).$watch(function (data) {
+
+            $('#NeosliveHybridSearch .carousel').carousel();
         }).run();
 
     };
 
 
-}]).directive('item', function () {
+}]).directive('item', function ($sce) {
 
 
     var template = '/_Resources/Static/Packages/Neoslive.Hybridsearch.Neos.Demo/Templates/';
@@ -49,17 +60,28 @@ angular.module('NeosliveHybridSearch', ['hybridsearch', 'ngSanitize']).controlle
                 }
 
                 if ($scope.node.isTurboNode()) {
-                    return template + 'Turbonode.html';
+                    $scope.html = $sce.trustAsHtml($scope.node.html);
+                    return template + 'Nodes/turbonode.html';
                 } else {
                     switch ($scope.node.getNodeType()) {
 
-                        // case 'phlu-corporate-contact':
-                        //
-                        //     if ($scope.view === 'all') {
-                        //         return template + '/All/phlu-corporate-contact.html';
-                        //     } else {
-                        //         return template + '/Group/phlu-corporate-contact.html';
-                        //     }
+                        case 'neos-demo-chapter':
+
+                            if ($scope.view === 'all') {
+                                return template + 'Node.html';
+                            } else {
+                                return template + 'Nodes/neos-demo-chapter.html';
+                            }
+                            break;
+
+                        case 'typo3-neos-nodetypes-image':
+
+                            if ($scope.view === 'all') {
+                                return template + 'Node.html';
+                            } else {
+                                return template + 'Nodes/typo3-neos-nodetypes-image.html';
+                            }
+                            break;
 
                         default:
                             return template + 'Node.html';

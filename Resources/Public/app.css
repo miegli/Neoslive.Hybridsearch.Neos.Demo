@@ -64,7 +64,7 @@
     z-index: 99999;
     background-color: rgba(33, 33, 33, 1);
     padding: 60px;
-    overflow: hidden;
+    overflow: auto;
     padding-top: 0;
 }
 
@@ -82,7 +82,7 @@
 }
 
 #NeosliveHybridSearch .results .tab-content .result-panel > ul > li {
-    border-top: 1px solid #444444;
+    /* border-top: 1px solid #444444; */
     padding-top: 10px;
 }
 #NeosliveHybridSearch .results .tab-content .result-panel > ul > li .body {
