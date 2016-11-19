@@ -1,6 +1,5 @@
 # Neoslive.Hybridsearch.Neos.Demo
 
-
 First of all you need a firebase realtime database. Create new a firebase project for free: 
 https://console.firebase.google.com/
 
