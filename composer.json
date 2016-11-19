@@ -7,6 +7,7 @@
         "neoslive/hybridsearch": "dev-master"
     },
     "minimum-stability": "dev",
+    "version": "0.1.0",
     "name": "neoslive/hybridsearch-neos-demo",
     "autoload": {
         "psr-0": {
