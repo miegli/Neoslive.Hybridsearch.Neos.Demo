@@ -1,12 +1,42 @@
-#NeosliveHybridSearch {
-    position: fixed;
-    top: 27px;
-    right: 30px;
-    width: 160px;
-    height: 40px;
-    z-index: 99980;
+
+
+
+@media only screen and (min-width: 1600px) {
+    #NeosliveHybridSearch {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        width: 160px;
+        height: 40px;
+        z-index: 99980;
+    }
+
 }
 
+@media only screen and (max-width: 767px) {
+    #NeosliveHybridSearch {
+        position: absolute;
+        top: 25px;
+        right: 130px;
+        width: 160px;
+        height: 40px;
+        z-index: 99980;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:1600px) {
+    #NeosliveHybridSearch {
+        position: fixed;
+        top: 64px;
+        right: 17px;
+        width: 185px;
+        height: 11px;
+        z-index: 99980;
+    }
+    #NeosliveHybridSearch input {
+        height:20px;
+    }
+}
 
 #NeosliveHybridSearch .input {
     width: 130px;
@@ -105,3 +135,4 @@
 #NeosliveHybridSearch .results .tab-content {
     padding-top: 30px;
 }
+

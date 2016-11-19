@@ -26,13 +26,15 @@ angular.module('NeosliveHybridSearch', ['hybridsearch', 'ngSanitize']).controlle
 
             'neos-demo-chapter': 'Chapter',
             'typo3-neos-nodetypes-headline': 'Pages',
+            'neos-demo-homepage': 'Pages',
+            'typo3-neos-nodetypes-page': 'Pages',
             'typo3-neos-nodetypes-text': 'Pages',
             'typo3-neos-nodetypes-image': 'Images'
 
         };
 
         mySearch.setNodeTypeLabels(labels).setQuery('query', $scope).$bind('result', $scope).$watch(function (data) {
-
+console.log(data);
             $('#NeosliveHybridSearch .carousel').carousel();
         }).run();
 

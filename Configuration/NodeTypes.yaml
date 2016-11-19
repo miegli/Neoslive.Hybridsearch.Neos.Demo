@@ -20,11 +20,17 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': TRUE
 
+##
+# Make node searchable
+#
+'TYPO3.Neos.NodeTypes:Text':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
 
 ##
 # Make node searchable
 #
-'TYPO3.Neos.NodeTypes:FourColumn':
+'TYPO3.Neos.NodeTypes:TextWithImage':
   superTypes:
     'Neoslive.Hybridsearch:Content': TRUE
 
