@@ -6,10 +6,13 @@ https://console.firebase.google.com/
 
 Then you need a database token. Open your firebase project settings and create new database secret/token (see service accounts > Database secrets).
 
+**Install flow package:**
+`composer require neoslive/hybridsearch-neos-demo`
 
 **Add to your flow Settings.yaml**
 
-```Neoslive:
+```
+Neoslive:
   Hybridsearch:
     Firebase:
       endpoint: 'https://** your firebase project name**.firebaseio.com/'
