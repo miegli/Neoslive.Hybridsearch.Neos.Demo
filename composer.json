@@ -4,9 +4,9 @@
     "require": {
         "typo3/flow": "*",
         "neos/demo": "*",
-        "neoslive/hybridsearch": "dev-master"
+        "neoslive/hybridsearch": "*"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "version": "0.1.0",
     "name": "neoslive/hybridsearch-neos-demo",
     "autoload": {
