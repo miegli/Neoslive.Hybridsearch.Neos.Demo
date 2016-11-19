@@ -73,7 +73,7 @@ page.head {
         tagName = 'script'
         attributes {
             src = TYPO3.TypoScript:ResourceUri {
-                path = 'resource://Neoslive.Hybridsearch.Neos.Demo/Public/App.js'
+                path = 'resource://Neoslive.Hybridsearch.Neos.Demo/Public/app.js'
             }
         }
     }
