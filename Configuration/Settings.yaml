@@ -9,7 +9,6 @@ Neoslive:
     Realtime: true
     Firebase:
       endpoint: 'https://neos-live.firebaseio.com/'
-      token: 'NthH1iEjKKQpInFPl2KBSNvlW9Es6wy9U2PNDexw'
     Filter:
       GrantParentNodeTypeFilter: '[instanceof TYPO3.Neos:Document]'
       ParentNodeTypeFilter: '[instanceof TYPO3.Neos.NodeTypes:Headline]'
